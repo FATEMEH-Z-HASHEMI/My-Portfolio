@@ -4,7 +4,7 @@ import Button from "@/components/Button";
 
 function Navbar() {
   return (
-    <nav className="grid grid-cols-3 m-auto bg-light/80 rounded-xl px-6 py-1.5 shadow">
+    <nav className="grid grid-cols-3 m-auto bg-light/80 rounded-xl px-6 py-1.5 shadow mt-6">
       <div className="flex flex-row justify-start items-center gap-1">
         <Image src="./icons/logo.svg" alt="logo site" width={80} height={80} />
         <p className="font-bold">Fatemeh Zahra Hashemi</p>
