@@ -1,7 +1,9 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import { MagneticText } from "@/components/ui/morphing-cursor";
+import { Magnetic } from "@/components/ui/magnetic";
 import Image from "next/image";
+import Link from "next/link";
 
 function Hero() {
   return (
@@ -113,33 +115,69 @@ function Hero() {
           "
         >
           <div className="flex flex-col justify-center items-center gap-3">
-            <Image
-              src="/icons/Telegram App.svg"
-              alt="Telegram"
-              width={20}
-              height={20}
-            />
+            <Magnetic intensity={0.3} springOptions={{ bounce: 0 }}>
+              <Link
+                href="https://t.me/FTM_HASHEMI7"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Telegram"
+              >
+                <Image
+                  src="/icons/Telegram App.svg"
+                  alt="Telegram"
+                  width={20}
+                  height={20}
+                />
+              </Link>
+            </Magnetic>
 
-            <Image
-              src="/icons/Github.svg"
-              alt="GitHub"
-              width={20}
-              height={20}
-            />
+            <Magnetic intensity={0.3} springOptions={{ bounce: 0 }}>
+              <Link
+                href="https://github.com/FATEMEH-Z-HASHEMI"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
+                <Image
+                  src="/icons/Github.svg"
+                  alt="GitHub"
+                  width={20}
+                  height={20}
+                />
+              </Link>
+            </Magnetic>
 
-            <Image
-              src="/icons/LinkedIn.svg"
-              alt="LinkedIn"
-              width={20}
-              height={20}
-            />
+            <Magnetic intensity={0.3} springOptions={{ bounce: 0 }}>
+              <Link
+                href="https://www.linkedin.com/in/fatemeh-z-hashemi/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <Image
+                  src="/icons/LinkedIn.svg"
+                  alt="LinkedIn"
+                  width={20}
+                  height={20}
+                />
+              </Link>
+            </Magnetic>
 
-            <Image
-              src="/icons/Instagram.svg"
-              alt="Instagram"
-              width={20}
-              height={20}
-            />
+            <Magnetic intensity={0.3} springOptions={{ bounce: 0 }}>
+              <Link
+                href="https://www.instagram.com/ftm.z.hashemipv/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <Image
+                  src="/icons/Instagram.svg"
+                  alt="Instagram"
+                  width={20}
+                  height={20}
+                />
+              </Link>
+            </Magnetic>
           </div>
           <div className="relative right-14 -top-6">
             <Image
