@@ -7,11 +7,20 @@
   --color-primary-hover: #9f5833;
   --color-text: #181211;
 }
+html {
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
   font-family: var(--font-inter), sans-serif;
+  -ms-overflow-style: none;
 }
 
 .title_font {
@@ -19,5 +28,5 @@ body {
 }
 
 .shadow {
-box-shadow: rgba(99, 99, 99, 0.068) 0px 2px 8px 0px;
+  box-shadow: rgba(99, 99, 99, 0.068) 0px 2px 8px 0px;
 }
