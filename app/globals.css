@@ -30,3 +30,19 @@ body {
 .shadow {
   box-shadow: rgba(99, 99, 99, 0.068) 0px 2px 8px 0px;
 }
+
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
