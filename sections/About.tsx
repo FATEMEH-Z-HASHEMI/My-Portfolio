@@ -1,7 +1,10 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { MagneticText } from "@/components/ui/morphing-cursor";
+import { TypewriterText } from "@/components/ui/typewriter-text";
 
 function SectionDivider() {
   return (
@@ -26,6 +29,8 @@ function SectionDivider() {
 }
 
 function About() {
+  const [activeParagraph, setActiveParagraph] = useState(0);
+
   return (
     <section
       id="about"
@@ -125,29 +130,25 @@ function About() {
 
             {/* Description */}
             <div className="mt-6 space-y-3 text-sm leading-7 text-text/90 sm:text-base sm:leading-7">
-              <p>
-                I&apos;m a Front-End Developer and UI/UX Designer passionate
-                about creating modern, responsive, and user-centered digital
-                experiences. I enjoy turning ideas and designs into clean,
-                functional, and intuitive interfaces that are not only visually
-                appealing but also easy to use.
-              </p>
+              <TypewriterText
+                text="I'm a Front-End Developer and UI/UX Designer passionate about creating modern, responsive, and user-centered digital experiences. I enjoy turning ideas and designs into clean, functional, and intuitive interfaces that are not only visually appealing but also easy to use."
+                speed={18}
+                start={activeParagraph >= 0}
+                onComplete={() => setActiveParagraph(1)}
+              />
 
-              <p>
-                My experience includes working with React, Next.js, TypeScript,
-                and modern CSS frameworks to build responsive web applications
-                and data-driven interfaces. Alongside development, I have a
-                strong interest in UI/UX design and enjoy working with tools
-                like Figma to create thoughtful and consistent user experiences.
-              </p>
+              <TypewriterText
+                text="My experience includes working with React, Next.js, TypeScript, and modern CSS frameworks to build responsive web applications and data-driven interfaces. Alongside development, I have a strong interest in UI/UX design and enjoy working with tools like Figma to create thoughtful and consistent user experiences."
+                speed={18}
+                start={activeParagraph >= 1}
+                onComplete={() => setActiveParagraph(2)}
+              />
 
-              <p>
-                I&apos;m always looking to improve my skills, explore new
-                technologies, and take on projects that challenge me to learn
-                and grow. I believe good products come from the combination of
-                thoughtful design, clean code, and a clear understanding of the
-                people who use them.
-              </p>
+              <TypewriterText
+                text="I'm always looking to improve my skills, explore new technologies, and take on projects that challenge me to learn and grow. I believe good products come from the combination of thoughtful design, clean code, and a clear understanding of the people who use them."
+                speed={18}
+                start={activeParagraph >= 2}
+              />
             </div>
 
             {/* Actions */}
