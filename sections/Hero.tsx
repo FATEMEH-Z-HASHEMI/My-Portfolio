@@ -41,9 +41,9 @@ function Hero() {
       />
 
       {/* Navbar */}
-      <div data-gsap="hero-navbar" className="relative z-50 mx-auto w-[90%]">
+      <header data-gsap="hero-navbar" className="relative z-50 mx-auto w-[90%]">
         <Navbar />
-      </div>
+      </header>
 
       {/* Hero content */}
       <section className="relative min-h-[calc(100vh-100px)]">

@@ -131,7 +131,7 @@ function About() {
           />
         </div>
 
-        <article className="-rotate-1 rounded-lg bg-light/90 px-6 py-10 shadow-shadow sm:px-10 sm:py-14 lg:px-16 lg:py-16">
+        <article className="-rotate-1 rounded-lg bg-light/90 px-6 py-10 shadow sm:px-10 sm:py-14 lg:px-16 lg:py-16">
           <div className="mx-auto">
             {/* Card heading */}
             <h3 className="flex items-center gap-2 text-2xl font-extrabold sm:text-3xl">
@@ -178,7 +178,7 @@ function About() {
             <div className="mt-10 flex flex-wrap items-center gap-4 sm:mt-12">
               <Link
                 href="#contact"
-                className="shadow-shadow inline-flex items-center justify-center rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-light transition-all hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary duration-300"
+                className="shadow inline-flex items-center justify-center rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-light transition-all hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary duration-300"
               >
                 Get in Touch
               </Link>

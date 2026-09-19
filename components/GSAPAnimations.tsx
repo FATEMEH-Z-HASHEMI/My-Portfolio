@@ -91,6 +91,21 @@ function GSAPAnimations() {
         },
       );
 
+      gsap.fromTo(
+        "[data-gsap='skills-page']",
+        { y: "12vh" },
+        {
+          y: 0,
+          ease: "none",
+          scrollTrigger: {
+            trigger: "[data-gsap='skills-page']",
+            start: "top 95%",
+            end: "top 48%",
+            scrub: 1,
+          },
+        },
+      );
+
       const aboutTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: "#about",
