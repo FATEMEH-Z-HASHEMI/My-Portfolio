@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
+import { MagneticText } from "@/components/ui/morphing-cursor";
 import Image from "next/image";
 
 function Hero() {
@@ -55,8 +56,12 @@ function Hero() {
             text-lg
           "
         >
-          <h2 className="font-bold">FRONT-END DEVELOPER</h2>
-          <h2 className="font-bold">& UI/UX DESIGNER</h2>
+          <MagneticText
+            as="h2"
+            className="font-bold"
+            text="FRONT-END DEVELOPER"
+          />
+          <MagneticText as="h2" className="font-bold" text="& UI/UX DESIGNER" />
         </div>
 
         {/* Big FRONT-END text */}
