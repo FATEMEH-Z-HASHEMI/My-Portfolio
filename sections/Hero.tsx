@@ -93,7 +93,7 @@ function Hero() {
           priority
           className="
             absolute
-            bottom-0
+            bottom-2
             left-5/9
             z-20
             w-185
