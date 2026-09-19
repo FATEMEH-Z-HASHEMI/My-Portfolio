@@ -31,7 +31,6 @@ body {
   box-shadow: rgba(99, 99, 99, 0.068) 0px 2px 8px 0px;
 }
 
-
 @keyframes float {
   0%,
   100% {
@@ -45,4 +44,27 @@ body {
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
+}
+
+@keyframes hero-marquee {
+  from {
+    transform: translateX(0);
+  }
+  
+  to {
+    transform: translateX(calc(-50% - (var(--hero-marquee-gap) / 2)));
+  }
+}
+
+.hero-marquee {
+  --hero-marquee-gap: clamp(1.5rem, 5vw, 5rem);
+  gap: var(--hero-marquee-gap);
+  animation: hero-marquee 25s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-marquee {
+    animation: none;
+    transform: translateX(0);
+  }
 }

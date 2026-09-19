@@ -67,22 +67,28 @@ function Hero() {
         </div>
 
         {/* Big FRONT-END text */}
-        <Image
-          src="/images/FRONT-END.svg"
-          alt="Front-end developer"
-          width={1600}
-          height={500}
-          priority
-          className="
-            absolute
-            left-1/2
-            top-[24%]
-            z-10
-            w-full
-            max-w-none
-            -translate-x-1/2
-          "
-        />
+        <div className="absolute inset-x-0 top-[24%] z-10 overflow-hidden">
+          <div className="hero-marquee flex w-max">
+            <Image
+              src="/images/FRONT-END.svg"
+              alt="Front-end developer"
+              width={1600}
+              height={500}
+              priority
+              className="w-screen max-w-none shrink-0"
+            />
+
+            <Image
+              src="/images/FRONT-END.svg"
+              alt=""
+              aria-hidden="true"
+              width={1600}
+              height={500}
+              priority
+              className="w-screen max-w-none shrink-0"
+            />
+          </div>
+        </div>
 
         {/* Character */}
         <Image
