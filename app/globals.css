@@ -50,7 +50,7 @@ body {
   from {
     transform: translateX(0);
   }
-  
+
   to {
     transform: translateX(calc(-50% - (var(--hero-marquee-gap) / 2)));
   }
@@ -63,6 +63,10 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .animate-float {
+    animation: none;
+  }
+
   .hero-marquee {
     animation: none;
     transform: translateX(0);

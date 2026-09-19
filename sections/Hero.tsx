@@ -7,9 +7,10 @@ import Link from "next/link";
 
 function Hero() {
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div data-gsap="hero" className="relative min-h-screen overflow-hidden">
       {/* Left decorative circle */}
       <div
+        data-gsap="hero-decoration-left"
         className="
           absolute
           z-0
@@ -25,6 +26,7 @@ function Hero() {
 
       {/* Right decorative circle */}
       <div
+        data-gsap="hero-decoration-right"
         className="
           absolute
           z-0
@@ -39,7 +41,7 @@ function Hero() {
       />
 
       {/* Navbar */}
-      <div className="relative z-50 mx-auto w-[90%]">
+      <div data-gsap="hero-navbar" className="relative z-50 mx-auto w-[90%]">
         <Navbar />
       </div>
 
@@ -57,6 +59,7 @@ function Hero() {
             gap-1
             text-lg
           "
+          data-gsap="hero-title"
         >
           <MagneticText
             as="h2"
@@ -67,7 +70,10 @@ function Hero() {
         </div>
 
         {/* Big FRONT-END text */}
-        <div className="absolute inset-x-0 top-[24%] z-10 overflow-hidden">
+        <div
+          data-gsap="hero-marquee-plane"
+          className="absolute inset-x-0 top-[24%] z-10 overflow-hidden"
+        >
           <div className="hero-marquee flex w-max">
             <Image
               src="/images/FRONT-END.svg"
@@ -91,25 +97,24 @@ function Hero() {
         </div>
 
         {/* Character */}
-        <Image
-          src="/images/me.svg"
-          alt="Fatemeh Zahra Hashemi"
-          width={800}
-          height={1000}
-          priority
-          className="
-            absolute
-            bottom-2
-            left-5/9
-            z-20
-            w-185
-            max-w-none
-            -translate-x-1/2
-          "
-        />
+        <div className="absolute -bottom-4 left-5/9 z-20 w-190 max-w-none -translate-x-1/2">
+          <div data-gsap="hero-character-parallax">
+            <div data-gsap="hero-character">
+              <Image
+                src="/images/me.svg"
+                alt="Fatemeh Zahra Hashemi"
+                width={800}
+                height={1000}
+                priority
+                className="w-full"
+              />
+            </div>
+          </div>
+        </div>
 
         {/* Social icons */}
         <div
+          data-gsap="hero-social"
           className="
             absolute
             bottom-[-3%]

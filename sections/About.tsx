@@ -35,7 +35,8 @@ function About() {
     <section
       id="about"
       aria-labelledby="about-title"
-      className="relative isolate min-h-screen overflow-hidden py-16 sm:py-20 lg:py-10"
+      data-gsap="about-page"
+      className="relative z-40 isolate -mt-[10vh] min-h-screen overflow-hidden bg-bg py-16 sm:-mt-[12vh] sm:py-20 lg:py-10"
     >
       {/* Vertical guide lines */}
       <div
@@ -52,61 +53,83 @@ function About() {
       <SectionDivider />
 
       {/* Decorative illustration */}
-      <Image
-        src="/images/Decorations1.svg"
-        alt="Decorations"
-        width={140}
-        height={140}
-        aria-hidden="true"
-        className="pointer-events-none absolute left-[8%] top-14 z-0 w-24 sm:w-28 lg:w-[140px] animate-float"
-      />
+      <div
+        data-gsap="about-decoration"
+        className="pointer-events-none absolute left-[8%] top-14 z-0 w-24 sm:w-28 lg:w-[140px]"
+      >
+        <Image
+          src="/images/Decorations1.svg"
+          alt="Decorations"
+          width={140}
+          height={140}
+          aria-hidden="true"
+          className="w-full animate-float"
+        />
+      </div>
 
       {/* Section heading */}
       <header className="relative z-10 mx-auto w-[80%] pt-16 sm:pt-20">
-        <MagneticText
-          as="p"
-          text="About"
-          className="mb-2 text-sm font-medium text-text/70"
-          hoverClassName="bg-primary"
-        />
-
-        <h2
-          id="about-title"
-          className="title_font text-5xl font-bold tracking-tight"
-        >
+        <div data-gsap="about-title">
           <MagneticText
-            text="A Bit About Me"
-            className="title_font"
-            hoverClassName="bg-text"
+            as="p"
+            text="About"
+            className="mb-2 text-sm font-medium text-text/70"
+            hoverClassName="bg-primary"
           />
-        </h2>
 
-        <p className="mt-4 max-w-md text-sm leading-6 text-text/70 sm:text-base">
-          A little insight into who I am, what I do, and what I love creating.
-        </p>
+          <h2
+            id="about-title"
+            className="title_font text-5xl font-bold tracking-tight"
+          >
+            <MagneticText
+              text="A Bit About Me"
+              className="title_font"
+              hoverClassName="bg-text"
+            />
+          </h2>
+        </div>
+
+        <div data-gsap="about-description">
+          <p className="mt-4 max-w-md text-sm leading-6 text-text/70 sm:text-base">
+            A little insight into who I am, what I do, and what I love creating.
+          </p>
+        </div>
       </header>
 
       {/* About card */}
-      <div className="relative z-10 mx-auto mt-14 w-[82%] max-w-[900px] sm:mt-16 lg:mt-20">
+      <div
+        data-gsap="about-card"
+        className="relative z-10 mx-auto mt-14 w-[82%] max-w-[900px] sm:mt-16 lg:mt-20"
+      >
         {/* Top glue */}
-        <Image
-          src="/images/glue.svg"
-          alt="glue"
-          aria-hidden="true"
-          width={200}
-          height={200}
-          className="pointer-events-none absolute -right-20 -top-20 z-20 w-32 sm:-right-20 sm:-top-24 sm:w-40"
-        />
+        <div
+          data-gsap="about-glue-top"
+          className="absolute -right-20 -top-20 z-20 w-32 sm:-right-20 sm:-top-24 sm:w-40"
+        >
+          <Image
+            src="/images/glue.svg"
+            alt="glue"
+            aria-hidden="true"
+            width={200}
+            height={200}
+            className="pointer-events-none w-full"
+          />
+        </div>
 
         {/* Bottom glue */}
-        <Image
-          src="/images/glue.svg"
-          alt="glue"
-          aria-hidden="true"
-          width={200}
-          height={200}
-          className="pointer-events-none absolute -bottom-20 -left-20 z-20 w-32 rotate-180 sm:-bottom-24 sm:-left-20 sm:w-40"
-        />
+        <div
+          data-gsap="about-glue-bottom"
+          className="absolute -bottom-20 -left-20 z-20 w-32 sm:-bottom-24 sm:-left-20 sm:w-40"
+        >
+          <Image
+            src="/images/glue.svg"
+            alt="glue"
+            aria-hidden="true"
+            width={200}
+            height={200}
+            className="pointer-events-none w-full rotate-180"
+          />
+        </div>
 
         <article className="-rotate-1 rounded-lg bg-light/90 px-6 py-10 shadow-shadow sm:px-10 sm:py-14 lg:px-16 lg:py-16">
           <div className="mx-auto">
