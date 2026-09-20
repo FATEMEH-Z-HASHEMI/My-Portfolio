@@ -113,196 +113,263 @@ function Skills() {
 
   useGSAP(
     () => {
-      const ctx = gsap.context(() => {
-        const title = sectionRef.current?.querySelector("[data-skills-title]");
+      const section = sectionRef.current;
 
-        const description = sectionRef.current?.querySelector(
-          "[data-skills-description]",
-        );
+      if (!section) return;
 
-        const cards = gsap.utils.toArray<HTMLElement>("[data-skill-card]");
+      const title = section.querySelector<HTMLElement>(
+        '[data-gsap="skills-title"]',
+      );
 
-        const codingImage = sectionRef.current?.querySelector(
-          "[data-coding-image]",
-        );
+      const description = section.querySelector<HTMLElement>(
+        '[data-gsap="skills-description"]',
+      );
 
-        if (!title || !description || !cards.length) return;
+      const codingImage = section.querySelector<HTMLElement>(
+        "[data-coding-image]",
+      );
 
-        // --------------------------------
-        // Section title
-        // --------------------------------
+      const cards = gsap.utils.toArray<HTMLElement>("[data-skill-card]");
 
-        gsap.fromTo(
-          title,
-          {
-            opacity: 0,
-            y: 60,
-            rotationX: 12,
-            transformPerspective: 1000,
-          },
-          {
-            opacity: 1,
-            y: 0,
-            rotationX: 0,
-            duration: 1,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: title,
-              start: "top 82%",
-              toggleActions: "play none none reverse",
-            },
-          },
-        );
+      if (!title || !description || !codingImage || !cards.length) return;
 
-        // --------------------------------
-        // Description
-        // --------------------------------
+      // --------------------------------
+      // Scatter positions
+      // --------------------------------
 
-        gsap.fromTo(
-          description,
-          {
-            opacity: 0,
-            y: 30,
-          },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            delay: 0.15,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: description,
-              start: "top 84%",
-              toggleActions: "play none none reverse",
-            },
-          },
-        );
+      const scatterPositions = [
+        { x: -900, y: -500, rotation: -45, scale: 0.45 },
+        { x: 750, y: -550, rotation: 38, scale: 0.5 },
+        { x: -1000, y: 50, rotation: -55, scale: 0.4 },
+        { x: 950, y: 100, rotation: 50, scale: 0.45 },
+        { x: -800, y: 500, rotation: 40, scale: 0.5 },
+        { x: 850, y: 550, rotation: -45, scale: 0.45 },
 
-        // --------------------------------
-        // Coding illustration
-        // --------------------------------
+        { x: -600, y: -700, rotation: 55, scale: 0.4 },
+        { x: 600, y: -650, rotation: -50, scale: 0.45 },
+        { x: -700, y: 700, rotation: -40, scale: 0.5 },
+        { x: 700, y: 650, rotation: 45, scale: 0.45 },
 
-        if (codingImage) {
-          gsap.fromTo(
-            codingImage,
-            {
-              opacity: 0,
-              y: -40,
-              scale: 0.92,
-              rotation: -4,
-            },
-            {
-              opacity: 1,
-              y: 0,
-              scale: 1,
-              rotation: 0,
-              duration: 1.1,
-              ease: "power3.out",
-              scrollTrigger: {
-                trigger: codingImage,
-                start: "top 90%",
-                toggleActions: "play none none reverse",
-              },
-            },
-          );
-        }
+        { x: -1200, y: -250, rotation: 60, scale: 0.4 },
+        { x: 1100, y: -300, rotation: -55, scale: 0.45 },
+        { x: -1100, y: 350, rotation: 50, scale: 0.4 },
+        { x: 1200, y: 400, rotation: -50, scale: 0.45 },
 
-        // --------------------------------
-        // Skills cards - 3D stagger
-        // --------------------------------
+        { x: -450, y: -850, rotation: -60, scale: 0.4 },
+        { x: 450, y: -850, rotation: 55, scale: 0.4 },
+        { x: -450, y: 850, rotation: 50, scale: 0.45 },
+        { x: 450, y: 850, rotation: -55, scale: 0.45 },
 
-        gsap.fromTo(
-          cards,
-          {
-            opacity: 0,
-            y: 70,
-            z: -120,
-            scale: 0.85,
-            rotationX: 18,
-            rotationY: -8,
-            transformPerspective: 1200,
-          },
-          {
-            opacity: 1,
-            y: 0,
-            z: 0,
-            scale: 1,
-            rotationX: 0,
-            rotationY: 0,
-            duration: 0.9,
-            ease: "power3.out",
-            stagger: {
-              each: 0.08,
-              from: "start",
-            },
-            scrollTrigger: {
-              trigger: cards[0],
-              start: "top 82%",
-              toggleActions: "play none none reverse",
-            },
-          },
-        );
+        { x: 0, y: -1000, rotation: 35, scale: 0.4 },
+      ];
 
-        // --------------------------------
-        // Card hover
-        // --------------------------------
+      // --------------------------------
+      // INITIAL STATE
+      // --------------------------------
 
-        cards.forEach((card) => {
-          const icon = card.querySelector("[data-skill-icon]");
+      gsap.set(title, {
+        x: -700,
+        y: -350,
+        rotation: -25,
+        scale: 0.55,
+        opacity: 0,
+        z: -500,
+        transformPerspective: 1500,
+      });
 
-          const enter = () => {
-            gsap.to(card, {
-              y: -8,
-              scale: 1.04,
-              rotationX: -3,
-              rotationY: 3,
-              duration: 0.35,
-              ease: "power2.out",
-            });
+      gsap.set(description, {
+        x: 700,
+        y: 350,
+        rotation: 20,
+        scale: 0.55,
+        opacity: 0,
+        z: -500,
+        transformPerspective: 1500,
+      });
 
-            if (icon) {
-              gsap.to(icon, {
-                y: -4,
-                scale: 1.08,
-                duration: 0.35,
-                ease: "power2.out",
-              });
-            }
-          };
+      gsap.set(codingImage, {
+        x: 0,
+        y: -900,
+        rotation: -25,
+        scale: 0.45,
+        opacity: 0,
+        z: -800,
+        transformPerspective: 1500,
+      });
 
-          const leave = () => {
-            gsap.to(card, {
-              y: 0,
-              scale: 1,
-              rotationX: 0,
-              rotationY: 0,
-              duration: 0.45,
-              ease: "power3.out",
-            });
+      cards.forEach((card, index) => {
+        const position = scatterPositions[index];
 
-            if (icon) {
-              gsap.to(icon, {
-                y: 0,
-                scale: 1,
-                duration: 0.45,
-                ease: "power3.out",
-              });
-            }
-          };
-
-          card.addEventListener("mouseenter", enter);
-          card.addEventListener("mouseleave", leave);
-
-          return () => {
-            card.removeEventListener("mouseenter", enter);
-            card.removeEventListener("mouseleave", leave);
-          };
+        gsap.set(card, {
+          x: position.x,
+          y: position.y,
+          rotation: position.rotation,
+          scale: position.scale,
+          opacity: 0,
+          z: -600,
+          transformPerspective: 1500,
+          transformStyle: "preserve-3d",
         });
-      }, sectionRef);
+      });
 
-      return () => ctx.revert();
+      // --------------------------------
+      // MAIN TIMELINE
+      // --------------------------------
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: "top 85%",
+          end: "bottom 10%",
+          scrub: 1,
+        },
+      });
+
+      // ========================================
+      // ENTER
+      // ========================================
+
+      tl.to(
+        codingImage,
+        {
+          x: 0,
+          y: 0,
+          rotation: 0,
+          scale: 1,
+          opacity: 1,
+          z: 0,
+          duration: 1.2,
+          ease: "power4.out",
+        },
+        0,
+      );
+
+      tl.to(
+        title,
+        {
+          x: 0,
+          y: 0,
+          rotation: 0,
+          scale: 1,
+          opacity: 1,
+          z: 0,
+          duration: 1,
+          ease: "back.out(1.7)",
+        },
+        0.1,
+      );
+
+      tl.to(
+        description,
+        {
+          x: 0,
+          y: 0,
+          rotation: 0,
+          scale: 1,
+          opacity: 1,
+          z: 0,
+          duration: 1,
+          ease: "back.out(1.5)",
+        },
+        0.15,
+      );
+
+      tl.to(
+        cards,
+        {
+          x: 0,
+          y: 0,
+          rotation: 0,
+          scale: 1,
+          opacity: 1,
+          z: 0,
+          duration: 1.3,
+          stagger: {
+            each: 0.06,
+            from: "random",
+          },
+          ease: "back.out(1.8)",
+        },
+        0.1,
+      );
+
+      // ========================================
+      // HOLD
+      // ========================================
+
+      tl.to({}, { duration: 0.7 });
+
+      // ========================================
+      // EXIT / EXPLOSION
+      // ========================================
+
+      tl.to(
+        codingImage,
+        {
+          x: -800,
+          y: -700,
+          rotation: -35,
+          scale: 0.4,
+          opacity: 0,
+          z: -700,
+          duration: 1.2,
+          ease: "power4.in",
+        },
+        "explode",
+      );
+
+      tl.to(
+        title,
+        {
+          x: -700,
+          y: -400,
+          rotation: -30,
+          scale: 0.5,
+          opacity: 0,
+          z: -600,
+          duration: 1.1,
+          ease: "power4.in",
+        },
+        "explode",
+      );
+
+      tl.to(
+        description,
+        {
+          x: 700,
+          y: 400,
+          rotation: 30,
+          scale: 0.5,
+          opacity: 0,
+          z: -600,
+          duration: 1.1,
+          ease: "power4.in",
+        },
+        "explode",
+      );
+
+      cards.forEach((card, index) => {
+        const position = scatterPositions[index];
+
+        tl.to(
+          card,
+          {
+            x: position.x,
+            y: position.y,
+            rotation: position.rotation,
+            scale: position.scale,
+            opacity: 0,
+            z: -600,
+            duration: 1.2,
+            ease: "power4.in",
+          },
+          "explode",
+        );
+      });
     },
-    { scope: sectionRef },
+    {
+      scope: sectionRef,
+    },
   );
 
   return (
@@ -310,7 +377,15 @@ function Skills() {
       ref={sectionRef}
       id="skills"
       data-gsap="skills-page"
-      className="relative z-50 -mt-[10vh] min-h-screen overflow-hidden bg-bg sm:-mt-[12vh]"
+      className="
+        relative
+        z-50
+        -mt-[10vh]
+        min-h-[120vh]
+        overflow-hidden
+        bg-bg
+        sm:-mt-[12vh]
+      "
     >
       {/* Coding illustration */}
       <div data-coding-image className="relative mx-auto w-full transform-gpu">
@@ -324,8 +399,9 @@ function Skills() {
       </div>
 
       {/* Section heading */}
+
       <header className="relative z-10 mx-auto w-[90%]">
-        <div data-skills-title>
+        <div data-gsap="skills-title">
           <MagneticText
             as="p"
             text="Skills"
@@ -345,10 +421,10 @@ function Skills() {
           </h2>
         </div>
 
-        <div data-skills-description>
+        <div data-gsap="skills-description">
           <p className="mt-4 max-w-md text-sm leading-6 text-text/70 sm:text-base">
-            A collection of technologies and tools I use to <br /> design and
-            build digital experiences.
+            A collection of technologies and tools I use to <br />
+            design and build digital experiences.
           </p>
         </div>
       </header>
