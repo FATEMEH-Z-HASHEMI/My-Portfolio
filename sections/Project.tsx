@@ -37,7 +37,7 @@ function Project() {
   return (
     <section
       id="projects"
-      className="relative z-10 overflow-hidden bg-[#ddd4c7] px-5 py-12 text-[#1f1d1b] sm:px-8 lg:px-10  bg-[url('/images/Dot-Pattern-background.svg')] bg-repeat"
+      className="relative z-10 overflow-hidden bg-bg px-5 py-12 text-[#1f1d1b] sm:px-8 lg:px-10 bg-[url('/images/Dot-Pattern-background.svg')] bg-repeat"
     >
       <div className="pointer-events-none absolute inset-0 opacity-70">
         <Image

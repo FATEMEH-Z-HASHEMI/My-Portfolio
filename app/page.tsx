@@ -3,6 +3,7 @@ import Hero from "@/sections/Hero";
 import About from "@/sections/About";
 import Skills from "@/sections/Skills";
 import Project from "@/sections/Project";
+import Footer from "@/sections/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import ScrollToTop from "@/components/ScrollToTop";
 import GSAPAnimations from "@/components/GSAPAnimations";
@@ -19,6 +20,7 @@ function Page() {
           <About />
           <Skills />
           <Project />
+          <Footer />
         </div>
       </div>
 
