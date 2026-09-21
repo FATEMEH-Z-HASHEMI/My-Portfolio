@@ -26,7 +26,10 @@ function Footer() {
 
   return (
     <div className="bg-[url('/images/Dot-Pattern-background.svg')] bg-repeat bg-bg pt-60 pb-10">
-      <footer className="relative m-auto flex w-[90%] overflow-visible rounded-2xl bg-light px-20 py-10 shadow animate-float">
+      <footer
+        id="contact"
+        className="relative m-auto flex w-[90%] overflow-visible rounded-2xl bg-light px-20 py-10 shadow animate-float"
+      >
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl"

@@ -8,6 +8,7 @@
   --color-text: #181211;
 }
 html {
+  scroll-behavior: smooth;
   scrollbar-width: none;
 }
 
@@ -68,6 +69,10 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .animate-float {
     animation: none;
   }
