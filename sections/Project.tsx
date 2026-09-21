@@ -45,42 +45,42 @@ function Project() {
           alt="Texture"
           width={40}
           height={40}
-          className="absolute left-[-20px] top-10 h-24 w-24"
+          className="absolute left-[-20px] top-10 h-24 w-24 animate-float"
         />
         <Image
           src="/images/Wave1.svg"
           alt="Texture"
           width={40}
           height={40}
-          className="absolute right-[-30px] top-52 h-24 w-24 rotate-[220deg]"
+          className="absolute right-[-30px] top-52 h-24 w-24 rotate-[220deg] animate-float"
         />
         <Image
           src="/images/Wave1.svg"
           alt="Texture"
           width={40}
           height={40}
-          className="absolute right-[200px] bottom-82 h-20 w-20 rotate-[120deg] opacity-50"
+          className="absolute right-[200px] bottom-82 h-20 w-20 rotate-[120deg] opacity-50 animate-float"
         />
         <Image
           src="/images/zigzag1.svg"
           alt="Texture"
           width={40}
           height={40}
-          className="absolute left-[-20px] bottom-16 h-24 w-36"
+          className="absolute left-[-20px] bottom-16 h-24 w-36 animate-float"
         />
         <Image
           src="/images/zigzag1.svg"
           alt="Texture"
           width={40}
           height={40}
-          className="absolute left-[200px] bottom-126 h-12 w-18 opacity-70 rotate-180"
+          className="absolute left-[200px] bottom-126 h-12 w-18 opacity-70 rotate-180 animate-float"
         />
         <Image
           src="/images/zigzag1.svg"
           alt="Texture"
           width={40}
           height={40}
-          className="absolute right-[-26px] bottom-[-10px] h-24 w-32 opacity-40 rotate-180"
+          className="absolute right-[-26px] bottom-[-10px] h-24 w-32 opacity-40 rotate-180 animate-float"
         />
       </div>
 

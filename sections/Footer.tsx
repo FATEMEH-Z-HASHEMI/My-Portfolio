@@ -26,8 +26,48 @@ function Footer() {
 
   return (
     <div className="bg-[url('/images/Dot-Pattern-background.svg')] bg-repeat bg-bg pt-60 pb-10">
-      <footer className="relative m-auto flex w-[90%] overflow-visible rounded-2xl bg-light px-20 py-10 shadow">
-        
+      <footer className="relative m-auto flex w-[90%] overflow-visible rounded-2xl bg-light px-20 py-10 shadow animate-float">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl"
+        >
+          <Image
+            src="/images/star.svg"
+            alt=""
+            width={34}
+            height={34}
+            className="absolute left-[11%] top-[14%] w-7 rotate-12 opacity-75"
+          />
+          <Image
+            src="/images/sparkle.svg"
+            alt=""
+            width={28}
+            height={28}
+            className="absolute left-[43%] top-[22%] w-6 -rotate-12 opacity-60"
+          />
+          <Image
+            src="/images/star.svg"
+            alt=""
+            width={46}
+            height={46}
+            className="absolute right-[31%] top-[12%] w-9 -rotate-6 opacity-65"
+          />
+          <Image
+            src="/images/sparkle.svg"
+            alt=""
+            width={38}
+            height={38}
+            className="absolute bottom-[18%] right-[72%] w-7 rotate-90 opacity-70"
+          />
+          <Image
+            src="/images/sparkle.svg"
+            alt=""
+            width={38}
+            height={38}
+            className="absolute bottom-[2%] right-[22%] w-7 rotate-12 opacity-70"
+          />
+        </div>
+
         {/* Left Content */}
         <div className="flex flex-col items-start justify-center gap-1 font-medium">
           <Image
