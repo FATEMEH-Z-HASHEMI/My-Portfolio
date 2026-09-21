@@ -36,7 +36,7 @@ function About() {
       id="about"
       aria-labelledby="about-title"
       data-gsap="about-page"
-      className="relative z-40 isolate -mt-[10vh] min-h-screen overflow-hidden bg-bg py-16 sm:-mt-[12vh] sm:py-20 lg:py-10"
+      className="relative z-0 isolate -mt-[10vh] min-h-screen overflow-hidden bg-bg py-16 sm:-mt-[12vh] sm:py-20 lg:py-10"
     >
       {/* Vertical guide lines */}
       <div
