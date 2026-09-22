@@ -47,7 +47,7 @@ function Navbar() {
             className="h-12 w-12 shrink-0 sm:h-16 sm:w-16"
           />
 
-          <p className="truncate text-sm font-bold sm:text-base">
+          <p className="truncate text-xs font-bold md:text-base">
             Fatemeh Zahra Hashemi
           </p>
         </div>

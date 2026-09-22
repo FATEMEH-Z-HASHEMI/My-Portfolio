@@ -104,7 +104,7 @@ function About() {
         {/* Top glue */}
         <div
           data-gsap="about-glue-top"
-          className="absolute -right-8 -top-12 z-20 w-20 sm:-right-20 sm:-top-24 sm:w-40"
+          className="absolute -right-4 -top-9 z-20 w-20 sm:-right-20 sm:-top-24 sm:w-40"
         >
           <Image
             src="/images/glue.svg"
@@ -119,7 +119,7 @@ function About() {
         {/* Bottom glue */}
         <div
           data-gsap="about-glue-bottom"
-          className="absolute -bottom-12 -left-8 z-20 w-20 sm:-bottom-24 sm:-left-20 sm:w-40"
+          className="absolute -bottom-10 -left-4 z-20 w-20 sm:-bottom-24 sm:-left-20 sm:w-40"
         >
           <Image
             src="/images/glue.svg"
@@ -131,10 +131,10 @@ function About() {
           />
         </div>
 
-        <article className="-rotate-1 rounded-lg bg-light/90 px-5 py-8 shadow sm:px-10 sm:py-14 lg:px-16 lg:py-16">
+        <article className="-rotate-1 rounded-xl md:rounded-lg bg-light/90 w-[90%] md:w-full m-auto px-5 py-8 shadow sm:px-10 sm:py-14 lg:px-16 lg:py-16">
           <div className="mx-auto">
             {/* Card heading */}
-            <h3 className="flex items-center gap-2 text-2xl font-extrabold sm:text-3xl">
+            <h3 className="flex items-center gap-2 text-xl font-extrabold md:text-3xl">
               <MagneticText
                 text="Hello"
                 className="font-extrabold"
@@ -147,12 +147,12 @@ function About() {
                 aria-hidden="true"
                 width={34}
                 height={34}
-                className="h-8 w-8 sm:h-9 sm:w-9"
+                className="h-7 w-7 sm:h-9 sm:w-9"
               />
             </h3>
 
             {/* Description */}
-            <div className="mt-6 space-y-3 text-sm leading-7 text-text/90 sm:text-base sm:leading-7">
+            <div className="mt-6 space-y-3 text-[10px] leading-5 text-text/90 md:text-sm lg:text-base lg:leading-7">
               <TypewriterText
                 text="I'm a Front-End Developer and UI/UX Designer passionate about creating modern, responsive, and user-centered digital experiences. I enjoy turning ideas and designs into clean, functional, and intuitive interfaces that are not only visually appealing but also easy to use."
                 speed={18}
@@ -178,12 +178,12 @@ function About() {
             <div className="mt-10 flex flex-wrap items-center gap-4 sm:mt-12">
               <Link
                 href="#contact"
-                className="shadow inline-flex items-center justify-center rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-light transition-all hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary duration-300"
+                className="shadow inline-flex items-center justify-center rounded-md bg-primary px-5 py-2.5 text-[10px] md:text-sm font-semibold text-light transition-all hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary duration-300"
               >
                 Get in Touch
               </Link>
 
-              <span className="inline-flex items-center gap-1 text-xs text-black/60 sm:text-sm">
+              <span className="inline-flex items-center gap-1 text-[10px] text-black/60 md:text-xs lg:text-sm">
                 <Image
                   src="/icons/location.svg"
                   alt="location icon"

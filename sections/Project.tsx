@@ -84,8 +84,8 @@ function Project() {
         />
       </div>
 
-      <div className="relative mx-auto w-[92%] sm:w-[90%]">
-        <header className="relative z-10 mx-auto w-full sm:w-[90%]">
+      <div className="relative mx-auto w-[96%]">
+        <header className="relative z-10 mx-auto w-full">
           <div data-gsap="projects-title">
             <MagneticText
               as="p"
@@ -115,11 +115,11 @@ function Project() {
           </div>
         </header>
 
-        <div className="relative">
+        <div className="relative md:mt-10 lg:mt-0">
           {projects.map((project) => (
             <div
               key={project.title}
-              className="group relative mx-auto grid w-full items-center justify-center gap-5 border-b border-text/15 pb-8 pt-7 last:border-b-0 sm:w-[92%] lg:grid-cols-[220px_100px_1fr] lg:pb-12"
+              className="group relative mx-auto grid w-full items-center justify-center gap-5 border-b border-text/15 pb-8 pt-7 last:border-b-0 sm:w-[92%] lg:grid-cols-[220px_100px_1fr] lg:pb-12 bg-light/50 lg:bg-none rounded-xl lg:rounded-none px-10 lg:px-0 my-10"
             >
               <div className="flex justify-center items-center">
                 <div className="text-xl font-black tracking-[-0.05em] sm:text-2xl lg:pl-0">
@@ -129,16 +129,16 @@ function Project() {
 
               <div className="hidden h-full w-0.5 bg-text/40 lg:block" />
 
-              <div className="relative lg:pl-10">
+              <div className="relative lg:pl-10 text-center md:text-right">
                 <h3 className="text-xl font-black tracking-tight sm:text-2xl">
                   <MagneticText text={project.title} hoverClassName="bg-text" />
                 </h3>
 
-                <p className="mt-4 text-base font-medium opacity-90 sm:mt-5 sm:text-lg">
+                <p className="mt-4 text-sm font-medium opacity-90 sm:mt-5 sm:text-lg">
                   {project.category}
                 </p>
 
-                <p className="my-3 text-sm leading-6 opacity-80 sm:text-base sm:leading-7">
+                <p className="my-3 text-xs leading-6 opacity-80 sm:text-base sm:leading-7">
                   {project.description}
                 </p>
 

@@ -72,13 +72,13 @@ function Footer() {
         </div>
 
         {/* Left Content */}
-        <div className="relative z-10 flex flex-col items-start justify-center gap-1 font-medium">
+        <div className="relative z-10 flex flex-col items-center md:items-start justify-center gap-1 font-medium">
           <Image
             src="/icons/logo.svg"
             alt="me"
             width={100}
             height={100}
-            className="mb-6 h-20 w-20 sm:mb-8 sm:h-[100px] sm:w-[100px]"
+            className="mb-2 md:mb-6 h-30 w-30 sm:mb-8 sm:h-[100px] sm:w-[100px]"
           />
 
           <MagneticText
@@ -89,6 +89,7 @@ function Footer() {
           <MagneticText
             text="Building clean, responsive, and user-focused web experiences."
             hoverClassName="bg-text"
+            className="text-center"
           />
 
           {/* Social Links */}
@@ -199,7 +200,7 @@ function Footer() {
             alt="me"
             width={320}
             height={320}
-            className="h-auto w-40 sm:w-[260px] lg:w-[320px]"
+            className="h-auto w-40 hidden lg:w-[320px]"
           />
         </div>
       </footer>
