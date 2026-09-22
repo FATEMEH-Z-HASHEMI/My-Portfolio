@@ -30,7 +30,7 @@ export default function ScrollToTop() {
       whileHover={{ scale: 1.2 }}
       whileTap={{ scale: 0.9 }}
       onClick={scrollToTop}>
-        <ArrowUp className="w-6 h-6" />
+        <ArrowUp className="w-4 h-4" />
     </motion.button>
   );
 }

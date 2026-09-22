@@ -164,13 +164,13 @@ function Project() {
             <MagneticText
               as="p"
               text="Projects"
-              className="mb-2 text-sm font-medium text-text/70"
+              className="mb-2 text-xs font-medium text-text/70"
               hoverClassName="bg-primary"
             />
 
             <h2
               id="projects-title"
-              className="title_font text-4xl font-bold tracking-tight sm:text-5xl"
+              className="title_font text-3xl md:text-4xl font-bold tracking-tight"
             >
               <MagneticText
                 text="Selected Work"
@@ -181,7 +181,7 @@ function Project() {
           </div>
 
           <div data-gsap="projects-description">
-            <p className="mt-4 max-w-md text-sm leading-6 text-text/70 sm:text-base">
+            <p className="mt-2 max-w-md text-xs md:text-sm leading-5 md:leading-6 text-text/70">
               A selection of projects and contributions that{" "}
               <br className="hidden sm:block" />
               reflect how I design, build, and solve problems.
@@ -194,7 +194,7 @@ function Project() {
             <div
               key={project.title}
               data-project-card
-              className="group relative mx-auto grid w-full items-center justify-center gap-5 pb-8 pt-7 sm:w-[92%] lg:grid-cols-[220px_100px_1fr] lg:pb-12 bg-light/50 lg:bg-light/0 rounded-xl lg:rounded-none px-10 lg:px-0 my-10"
+              className="group relative mx-auto grid w-full items-center justify-center gap-5 pb-8 pt-7 md:w-[92%] lg:w-[90%] lg:grid-cols-[220px_100px_1fr] lg:pb-12 bg-light/50 lg:bg-light/0 rounded-xl lg:rounded-none px-10 lg:px-0 my-10"
             >
               <div className="flex justify-center items-center">
                 <div className="text-xl font-black tracking-[-0.05em] sm:text-2xl lg:pl-0">
@@ -209,11 +209,11 @@ function Project() {
                   <MagneticText text={project.title} hoverClassName="bg-text" />
                 </h3>
 
-                <p className="mt-4 text-sm font-medium opacity-90 sm:mt-5 sm:text-lg">
+                <p className="mt-4 text-sm font-medium opacity-90 sm:mt-5 sm:text-base">
                   {project.category}
                 </p>
 
-                <p className="my-3 text-xs leading-6 opacity-80 sm:text-base sm:leading-7">
+                <p className="my-3 text-xs leading-6 opacity-80 sm:text-sm sm:leading-7">
                   {project.description}
                 </p>
 

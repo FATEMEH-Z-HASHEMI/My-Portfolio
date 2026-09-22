@@ -13,17 +13,17 @@ function Button() {
           items-center
           justify-center
           overflow-hidden
-          rounded-xl
+          rounded-lg
           border
           border-primary
           px-4
-          py-2.5
-          text-sm
+          py-2
+          text-xs
           font-medium
           text-primary
           transition-colors
           duration-300
-          hover:text-bg
+          hover:text-light
         "
       >
         <span className="relative z-10 transition-transform duration-300 group-hover:scale-105">

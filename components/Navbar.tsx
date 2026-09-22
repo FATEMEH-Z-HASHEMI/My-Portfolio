@@ -42,7 +42,7 @@ function Navbar() {
   return (
     <>
       {/* Navbar */}
-      <nav className="mx-auto mt-4 flex w-full items-center justify-between rounded-xl bg-light/80 px-4 py-2 shadow backdrop-blur-sm sm:mt-6 sm:px-6 sm:py-1.5 lg:grid lg:grid-cols-3">
+      <nav className="mx-auto mt-4 flex w-full items-center justify-between rounded-xl bg-light/80 px-4 py-2 shadow backdrop-blur-sm sm:mt-6 sm:px-6 sm:py-0 lg:grid lg:grid-cols-3">
         <div className="flex min-w-0 items-center gap-2">
           <Image
             src="/icons/logo.svg"
@@ -52,13 +52,13 @@ function Navbar() {
             className="h-12 w-12 shrink-0 sm:h-16 sm:w-16"
           />
 
-          <p className="truncate text-xs font-bold md:text-base">
+          <p className="truncate text-xs font-bold">
             Fatemeh Zahra Hashemi
           </p>
         </div>
 
         {/* Desktop Navigation */}
-        <ul className="hidden items-center justify-center gap-4 text-sm font-medium text-text/70 lg:flex xl:gap-5">
+        <ul className="hidden items-center justify-center gap-4 text-[10px] font-medium text-text/70 lg:flex xl:gap-5">
           {navigationItems.map((item, index) => (
             <React.Fragment key={item.href}>
               {index > 0 && (

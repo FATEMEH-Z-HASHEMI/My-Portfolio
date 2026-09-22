@@ -75,7 +75,7 @@ function Footer() {
         <div className="relative z-10 flex flex-col items-center md:items-start justify-center gap-1 font-medium">
           <Image
             src="/icons/logo.svg"
-            alt="me"
+            alt="logo"
             width={100}
             height={100}
             className="mb-2 md:mb-6 h-30 w-30 sm:mb-8 sm:h-[100px] sm:w-[100px]"

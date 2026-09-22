@@ -44,10 +44,7 @@ function Hero() {
       />
 
       {/* Navbar */}
-      <header
-        data-gsap="hero-navbar"
-        className="relative z-50 mx-auto w-[92%] max-w-[90rem]"
-      >
+      <header data-gsap="hero-navbar" className="relative z-50 mx-auto w-[90%]">
         <Navbar />
       </header>
 
@@ -63,7 +60,7 @@ function Hero() {
             flex
             flex-col
             gap-1
-            text-sm sm:text-lg
+            text-sm md:text-base
           "
           data-gsap="hero-title"
         >
@@ -87,17 +84,17 @@ function Hero() {
               width={1600}
               height={500}
               priority
-              className="h-auto w-[210vw] md:w-[170vw] lg:w-[90vw] max-w-none shrink-0"
+              className="h-auto w-[210vw] md:w-[170vw] lg:w-[80vw] max-w-none shrink-0"
             />
 
             <Image
               src="/images/FRONT-END.svg"
-              alt=""
+              alt="Front-end developer"
               aria-hidden="true"
               width={1600}
               height={500}
               priority
-              className="h-auto w-[210vw] md:w-[170vw] lg:w-[90vw] max-w-none shrink-0 ml-10"
+              className="h-auto w-[210vw] md:w-[170vw] lg:w-[80vw] max-w-none shrink-0 ml-10"
             />
           </div>
         </div>
@@ -112,7 +109,7 @@ function Hero() {
                 width={800}
                 height={1000}
                 priority
-                className="w-full md:w-[90%] lg:w-[88%] m-auto"
+                className="w-full md:w-[90%] lg:w-[55%] m-auto"
               />
             </div>
           </div>
@@ -123,7 +120,7 @@ function Hero() {
           data-gsap="hero-social"
           className="
             absolute
-            bottom-[2%]
+            -bottom-4
             right-[4%]
             z-30
             lg:flex
@@ -132,7 +129,7 @@ function Hero() {
             items-center 
           "
         >
-          <div className="flex flex-col items-center justify-center gap-3 sm:gap-4">
+          <div className="flex flex-col items-center justify-center gap-3 sm:gap-2">
             <Magnetic intensity={0.3} springOptions={{ bounce: 0 }}>
               <Link
                 href="https://t.me/FTM_HASHEMI7"
@@ -143,8 +140,8 @@ function Hero() {
                 <Image
                   src="/icons/Telegram App.svg"
                   alt="Telegram"
-                  width={20}
-                  height={20}
+                  width={15}
+                  height={15}
                 />
               </Link>
             </Magnetic>
@@ -159,8 +156,8 @@ function Hero() {
                 <Image
                   src="/icons/Github.svg"
                   alt="GitHub"
-                  width={20}
-                  height={20}
+                  width={15}
+                  height={15}
                 />
               </Link>
             </Magnetic>
@@ -175,8 +172,8 @@ function Hero() {
                 <Image
                   src="/icons/LinkedIn.svg"
                   alt="LinkedIn"
-                  width={20}
-                  height={20}
+                  width={15}
+                  height={15}
                 />
               </Link>
             </Magnetic>
@@ -191,8 +188,8 @@ function Hero() {
                 <Image
                   src="/icons/Instagram.svg"
                   alt="Instagram"
-                  width={20}
-                  height={20}
+                  width={15}
+                  height={15}
                 />
               </Link>
             </Magnetic>
@@ -201,8 +198,8 @@ function Hero() {
             <Image
               src="/images/line-arrow.svg"
               alt="arrow"
-              width={70}
-              height={70}
+              width={60}
+              height={60}
             />
           </div>
         </div>

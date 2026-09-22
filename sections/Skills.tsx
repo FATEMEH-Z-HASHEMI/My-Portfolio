@@ -405,13 +405,13 @@ function Skills() {
           <MagneticText
             as="p"
             text="Skills"
-            className="mb-2 text-sm font-medium text-text/70"
+            className="mb-2 text-xs font-medium text-text/70"
             hoverClassName="bg-primary"
           />
 
           <h2
             id="skills-title"
-            className="title_font text-4xl font-bold tracking-tight sm:text-5xl"
+            className="title_font text-3xl md:text-4xl font-bold tracking-tight"
           >
             <MagneticText
               text="My Toolkit"
@@ -422,7 +422,7 @@ function Skills() {
         </div>
 
         <div data-gsap="skills-description">
-          <p className="mt-4 max-w-md text-sm leading-6 text-text/70 sm:text-base">
+          <p className="mt-2 max-w-md text-xs md:text-sm leading-5 md:leading-6 text-text/70">
             A collection of technologies and tools I use to{" "}
             <br className="hidden sm:block" />
             design and build digital experiences.
@@ -440,7 +440,7 @@ function Skills() {
           grid-cols-2
           gap-4
           sm:grid-cols-3
-          sm:gap-5
+          sm:gap-3
           lg:grid-cols-4
           xl:grid-cols-6
         "
@@ -466,10 +466,10 @@ function Skills() {
             "
           >
             <div data-skill-icon className="transform-gpu">
-              <Image src={item.path} alt={item.name} width={40} height={40} />
+              <Image src={item.path} alt={item.name} width={36} height={36} />
             </div>
 
-            <p className="text-center text-sm">{item.name}</p>
+            <p className="text-center text-[10px]">{item.name}</p>
           </div>
         ))}
       </div>

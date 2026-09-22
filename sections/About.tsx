@@ -73,13 +73,13 @@ function About() {
           <MagneticText
             as="p"
             text="About"
-            className="mb-2 text-sm font-medium text-text/70"
+            className="mb-2 text-xs font-medium text-text/70"
             hoverClassName="bg-primary"
           />
 
           <h2
             id="about-title"
-            className="title_font text-4xl font-bold tracking-tight sm:text-5xl"
+            className="title_font text-3xl md:text-4xl font-bold tracking-tight"
           >
             <MagneticText
               text="A Bit About Me"
@@ -90,8 +90,8 @@ function About() {
         </div>
 
         <div data-gsap="about-description">
-          <p className="mt-4 max-w-md text-sm leading-6 text-text/70 sm:text-base">
-            A little insight into who I am, what I do, and what I love creating.
+          <p className="mt-2 max-w-md text-xs md:text-sm leading-5 md:leading-6 text-text/70">
+            A little insight into who I am, what I do, and what I love <br className="hidden md:block"/>creating.
           </p>
         </div>
       </header>
@@ -99,12 +99,12 @@ function About() {
       {/* About card */}
       <div
         data-gsap="about-card"
-        className="relative z-10 mx-auto mt-12 w-[90%] max-w-[900px] sm:mt-16 sm:w-[82%] lg:mt-20"
+        className="relative z-10 mx-auto mt-12 w-[90%] max-w-[900px] sm:mt-2 sm:w-[82%]"
       >
         {/* Top glue */}
         <div
           data-gsap="about-glue-top"
-          className="absolute -right-4 -top-9 z-20 w-20 md:-right-10 md:-top-12 md:w-22 lg:-right-20 lg:-top-24 lg:w-40"
+          className="absolute -right-4 -top-9 z-20 w-20 md:-right-10 md:-top-12 md:w-22 lg:-right-16 lg:-top-22 lg:w-35"
         >
           <Image
             src="/images/glue.svg"
@@ -119,7 +119,7 @@ function About() {
         {/* Bottom glue */}
         <div
           data-gsap="about-glue-bottom"
-          className="absolute -bottom-10 -left-4 z-20 w-20 md:w-22 md:-bottom-12 md:-left-9 lg:-bottom-24 lg:-left-20 lg:w-40"
+          className="absolute -bottom-10 -left-4 z-20 w-20 md:w-22 md:-bottom-12 md:-left-9 lg:-bottom-22 lg:-left-16 lg:w-35"
         >
           <Image
             src="/images/glue.svg"
@@ -134,7 +134,7 @@ function About() {
         <article className="-rotate-1 rounded-xl md:rounded-lg bg-light/90 w-[90%] md:w-full m-auto px-5 py-8 shadow sm:px-10 sm:py-14 lg:px-16 lg:py-16">
           <div className="mx-auto">
             {/* Card heading */}
-            <h3 className="flex items-center gap-2 text-xl font-extrabold md:text-3xl">
+            <h3 className="flex items-center gap-2 text-xl font-extrabold md:text-2xl">
               <MagneticText
                 text="Hello"
                 className="font-extrabold"
@@ -147,12 +147,12 @@ function About() {
                 aria-hidden="true"
                 width={34}
                 height={34}
-                className="h-7 w-7 sm:h-9 sm:w-9"
+                className="h-7 w-7 sm:h-8 sm:w-8"
               />
             </h3>
 
             {/* Description */}
-            <div className="mt-6 space-y-3 text-[10px] leading-5 text-text/90 md:text-sm lg:text-base lg:leading-7">
+            <div className="mt-4 space-y-3 text-[10px] leading-5 text-text/90 md:text-xs lg:leading-7">
               <TypewriterText
                 text="I'm a Front-End Developer and UI/UX Designer passionate about creating modern, responsive, and user-centered digital experiences. I enjoy turning ideas and designs into clean, functional, and intuitive interfaces that are not only visually appealing but also easy to use."
                 speed={18}
@@ -178,12 +178,12 @@ function About() {
             <div className="mt-10 flex flex-wrap items-center gap-4 sm:mt-12">
               <Link
                 href="#contact"
-                className="shadow inline-flex items-center justify-center rounded-md bg-primary px-5 py-2.5 text-[10px] md:text-sm font-semibold text-light transition-all hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary duration-300"
+                className="shadow inline-flex items-center justify-center rounded-md bg-primary px-5 py-2.5 text-[10px] md:text-xs font-semibold text-light transition-all hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary duration-300"
               >
                 Get in Touch
               </Link>
 
-              <span className="inline-flex items-center gap-1 text-[10px] text-black/60 md:text-xs lg:text-sm">
+              <span className="inline-flex items-center gap-1 text-[10px] text-black/60 md:text-xs">
                 <Image
                   src="/icons/location.svg"
                   alt="location icon"
