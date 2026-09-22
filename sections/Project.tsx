@@ -1,7 +1,14 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
 import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import { MagneticText } from "@/components/ui/morphing-cursor";
 import { HoverLinkPreview } from "@/components/ui/hover-link-preview";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
@@ -34,8 +41,75 @@ const projects = [
 ];
 
 function Project() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useGSAP(
+    () => {
+      const media = gsap.matchMedia();
+
+      media.add("(prefers-reduced-motion: no-preference)", () => {
+        const cards = gsap.utils.toArray<HTMLElement>("[data-project-card]");
+
+        if (!cards.length || !sectionRef.current) return;
+
+        cards.forEach((card, index) => {
+          const direction = index % 2 === 0 ? 1 : -1;
+
+          gsap.set(card, {
+            xPercent: direction * 125,
+            y: index % 2 === 0 ? 35 : -35,
+            rotation: direction * 8,
+            opacity: 0,
+          });
+        });
+
+        const timeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 78%",
+            end: "bottom 15%",
+            scrub: 1,
+          },
+        });
+
+        timeline.to(cards, {
+          xPercent: 0,
+          y: 0,
+          rotation: 0,
+          opacity: 1,
+          duration: 1,
+          stagger: 0.8,
+          ease: "power3.out",
+        });
+
+        timeline.to({}, { duration: 0.7 });
+
+        cards.forEach((card, index) => {
+          const direction = index % 2 === 0 ? -1 : 1;
+
+          timeline.to(
+            card,
+            {
+              xPercent: direction * 140,
+              y: index % 2 === 0 ? -45 : 45,
+              rotation: direction * 12,
+              opacity: 0,
+              duration: 1,
+              ease: "power3.in",
+            },
+            "scatter",
+          );
+        });
+      });
+
+      return () => media.revert();
+    },
+    { scope: sectionRef },
+  );
+
   return (
     <section
+      ref={sectionRef}
       id="projects"
       className="relative z-10 overflow-hidden bg-bg px-4 py-12 text-[#1f1d1b] sm:px-8 lg:px-10 bg-[url('/images/Dot-Pattern-background.svg')] bg-repeat"
     >
@@ -119,6 +193,7 @@ function Project() {
           {projects.map((project) => (
             <div
               key={project.title}
+              data-project-card
               className="group relative mx-auto grid w-full items-center justify-center gap-5 border-b border-text/15 pb-8 pt-7 last:border-b-0 sm:w-[92%] lg:grid-cols-[220px_100px_1fr] lg:pb-12 bg-light/50 lg:bg-none rounded-xl lg:rounded-none px-10 lg:px-0 my-10"
             >
               <div className="flex justify-center items-center">
