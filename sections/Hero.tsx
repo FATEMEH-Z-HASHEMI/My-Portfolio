@@ -7,16 +7,19 @@ import Link from "next/link";
 
 function Hero() {
   return (
-    <div data-gsap="hero" className="relative min-h-screen overflow-hidden">
+    <div
+      data-gsap="hero"
+      className="relative min-h-[clamp(38rem,100svh,56rem)] overflow-hidden"
+    >
       {/* Left decorative circle */}
       <div
         data-gsap="hero-decoration-left"
         className="
           absolute
           z-0
-          -left-[290px]
-          -top-[320px]
-          size-200
+          -left-[16rem]
+          -top-[18rem]
+          size-[clamp(22rem,50vw,50rem)]
           rounded-full
           border
           border-black/30
@@ -30,9 +33,9 @@ function Hero() {
         className="
           absolute
           z-0
-          -right-[180px]
-          bottom-[-320px]
-          size-175
+          -right-[12rem]
+          bottom-[-18rem]
+          size-[clamp(20rem,44vw,44rem)]
           rounded-full
           border
           border-black/30
@@ -41,23 +44,26 @@ function Hero() {
       />
 
       {/* Navbar */}
-      <header data-gsap="hero-navbar" className="relative z-50 mx-auto w-[90%]">
+      <header
+        data-gsap="hero-navbar"
+        className="relative z-50 mx-auto w-[92%] max-w-[90rem]"
+      >
         <Navbar />
       </header>
 
       {/* Hero content */}
-      <section className="relative min-h-[calc(100vh-100px)]">
+      <section className="relative min-h-[calc(100svh-6rem)] sm:min-h-[calc(100vh-6.25rem)]">
         {/* Job title */}
         <div
           className="
             absolute
             left-[5%]
-            top-[13%]
+            top-[10%]
             z-30
             flex
             flex-col
             gap-1
-            text-lg
+            text-sm sm:text-lg
           "
           data-gsap="hero-title"
         >
@@ -72,7 +78,7 @@ function Hero() {
         {/* Big FRONT-END text */}
         <div
           data-gsap="hero-marquee-plane"
-          className="absolute inset-x-0 top-[24%] z-10 overflow-hidden"
+          className="absolute inset-x-0 top-[26%] z-10 overflow-hidden sm:top-[24%]"
         >
           <div className="hero-marquee flex w-max">
             <Image
@@ -81,7 +87,7 @@ function Hero() {
               width={1600}
               height={500}
               priority
-              className="w-screen max-w-none shrink-0"
+              className="h-auto w-[150vw] max-w-none shrink-0 sm:w-screen"
             />
 
             <Image
@@ -91,13 +97,13 @@ function Hero() {
               width={1600}
               height={500}
               priority
-              className="w-screen max-w-none shrink-0"
+              className="h-auto w-[150vw] max-w-none shrink-0 sm:w-screen"
             />
           </div>
         </div>
 
         {/* Character */}
-        <div className="absolute -bottom-4 left-5/9 z-20 w-190 max-w-none -translate-x-1/2">
+        <div className="absolute bottom-0 left-1/2 z-20 w-[min(94vw,48rem)] max-w-none -translate-x-1/2 sm:-bottom-4">
           <div data-gsap="hero-character-parallax">
             <div data-gsap="hero-character">
               <Image
@@ -117,15 +123,15 @@ function Hero() {
           data-gsap="hero-social"
           className="
             absolute
-            bottom-[-3%]
-            right-[5%]
+            bottom-[2%]
+            right-[4%]
             z-30
             flex
             flex-col
             items-center
           "
         >
-          <div className="flex flex-col justify-center items-center gap-3">
+          <div className="flex flex-col items-center justify-center gap-3 sm:gap-4">
             <Magnetic intensity={0.3} springOptions={{ bounce: 0 }}>
               <Link
                 href="https://t.me/FTM_HASHEMI7"
@@ -190,7 +196,7 @@ function Hero() {
               </Link>
             </Magnetic>
           </div>
-          <div className="relative right-14 -top-6">
+          <div className="relative right-10 -top-4 hidden sm:block">
             <Image
               src="/images/line-arrow.svg"
               alt="arrow"

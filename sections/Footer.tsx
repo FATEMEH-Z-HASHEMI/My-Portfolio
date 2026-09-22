@@ -25,10 +25,10 @@ function Footer() {
   };
 
   return (
-    <div className="bg-[url('/images/Dot-Pattern-background.svg')] bg-repeat bg-bg pt-60 pb-10">
+    <div className="bg-[url('/images/Dot-Pattern-background.svg')] bg-repeat bg-bg px-0 pb-6 pt-32 sm:pb-10 sm:pt-60">
       <footer
         id="contact"
-        className="relative m-auto flex w-[90%] overflow-visible rounded-2xl bg-light px-20 py-10 shadow animate-float"
+        className="relative m-auto flex w-[92%] flex-col overflow-visible rounded-2xl bg-light px-5 py-8 shadow animate-float sm:w-[90%] sm:px-10 sm:py-10 lg:px-20"
       >
         <div
           aria-hidden="true"
@@ -72,13 +72,13 @@ function Footer() {
         </div>
 
         {/* Left Content */}
-        <div className="flex flex-col items-start justify-center gap-1 font-medium">
+        <div className="relative z-10 flex flex-col items-start justify-center gap-1 font-medium">
           <Image
             src="/icons/logo.svg"
             alt="me"
             width={100}
             height={100}
-            className="mb-8"
+            className="mb-6 h-20 w-20 sm:mb-8 sm:h-[100px] sm:w-[100px]"
           />
 
           <MagneticText
@@ -193,13 +193,13 @@ function Footer() {
         </div>
 
         {/* Me */}
-        <div className="absolute bottom-0 right-16">
+        <div className="pointer-events-none relative mt-6 self-end sm:absolute sm:bottom-0 sm:right-8 sm:mt-0 lg:right-16">
           <Image
             src="/images/me.svg"
             alt="me"
             width={320}
             height={320}
-            className="h-auto w-[320px]"
+            className="h-auto w-40 sm:w-[260px] lg:w-[320px]"
           />
         </div>
       </footer>

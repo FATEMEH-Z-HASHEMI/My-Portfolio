@@ -1,19 +1,24 @@
 import React from "react";
+import Link from "next/link";
 
 function Button() {
   return (
-    <div className="flex items-center justify-end">
-      <button
+    <div className="flex w-full items-center justify-end">
+      <Link
+        href="#contact"
         className="
           group
           relative
-          cursor-pointer
+          inline-flex
+          items-center
+          justify-center
           overflow-hidden
           rounded-xl
           border
           border-primary
-          px-6
+          px-4
           py-2.5
+          text-sm
           font-medium
           text-primary
           transition-colors
@@ -38,7 +43,7 @@ function Button() {
             group-hover:scale-x-100
           "
         />
-      </button>
+      </Link>
     </div>
   );
 }

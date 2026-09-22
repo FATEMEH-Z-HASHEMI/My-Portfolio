@@ -381,7 +381,7 @@ function Skills() {
         relative
         z-50
         -mt-[10vh]
-        min-h-[120vh]
+        min-h-[105vh]
         overflow-hidden
         bg-bg
         sm:-mt-[12vh]
@@ -400,7 +400,7 @@ function Skills() {
 
       {/* Section heading */}
 
-      <header className="relative z-10 mx-auto w-[90%]">
+      <header className="relative z-10 mx-auto w-[88%] sm:w-[90%]">
         <div data-gsap="skills-title">
           <MagneticText
             as="p"
@@ -411,7 +411,7 @@ function Skills() {
 
           <h2
             id="skills-title"
-            className="title_font text-5xl font-bold tracking-tight"
+            className="title_font text-4xl font-bold tracking-tight sm:text-5xl"
           >
             <MagneticText
               text="My Toolkit"
@@ -423,7 +423,8 @@ function Skills() {
 
         <div data-gsap="skills-description">
           <p className="mt-4 max-w-md text-sm leading-6 text-text/70 sm:text-base">
-            A collection of technologies and tools I use to <br />
+            A collection of technologies and tools I use to{" "}
+            <br className="hidden sm:block" />
             design and build digital experiences.
           </p>
         </div>
@@ -435,7 +436,7 @@ function Skills() {
           mx-auto
           my-10
           grid
-          w-[80%]
+          w-[88%]
           grid-cols-2
           gap-4
           sm:grid-cols-3
@@ -450,7 +451,7 @@ function Skills() {
             data-skill-card
             className="
               flex
-              h-30
+              h-28
               w-full
               transform-gpu
               flex-col

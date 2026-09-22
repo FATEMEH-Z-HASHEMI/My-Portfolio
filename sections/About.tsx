@@ -36,7 +36,7 @@ function About() {
       id="about"
       aria-labelledby="about-title"
       data-gsap="about-page"
-      className="relative z-0 isolate -mt-[10vh] min-h-screen overflow-hidden bg-bg py-16 sm:-mt-[12vh] sm:py-20 lg:py-10"
+      className="relative z-0 isolate -mt-[8vh] min-h-screen overflow-hidden bg-bg py-14 sm:-mt-[12vh] sm:py-20 lg:py-10"
     >
       {/* Vertical guide lines */}
       <div
@@ -68,7 +68,7 @@ function About() {
       </div>
 
       {/* Section heading */}
-      <header className="relative z-10 mx-auto w-[80%] pt-16 sm:pt-20">
+      <header className="relative z-10 mx-auto w-[88%] pt-14 sm:w-[80%] sm:pt-20">
         <div data-gsap="about-title">
           <MagneticText
             as="p"
@@ -79,7 +79,7 @@ function About() {
 
           <h2
             id="about-title"
-            className="title_font text-5xl font-bold tracking-tight"
+            className="title_font text-4xl font-bold tracking-tight sm:text-5xl"
           >
             <MagneticText
               text="A Bit About Me"
@@ -99,12 +99,12 @@ function About() {
       {/* About card */}
       <div
         data-gsap="about-card"
-        className="relative z-10 mx-auto mt-14 w-[82%] max-w-[900px] sm:mt-16 lg:mt-20"
+        className="relative z-10 mx-auto mt-12 w-[90%] max-w-[900px] sm:mt-16 sm:w-[82%] lg:mt-20"
       >
         {/* Top glue */}
         <div
           data-gsap="about-glue-top"
-          className="absolute -right-20 -top-20 z-20 w-32 sm:-right-20 sm:-top-24 sm:w-40"
+          className="absolute -right-8 -top-12 z-20 w-20 sm:-right-20 sm:-top-24 sm:w-40"
         >
           <Image
             src="/images/glue.svg"
@@ -119,7 +119,7 @@ function About() {
         {/* Bottom glue */}
         <div
           data-gsap="about-glue-bottom"
-          className="absolute -bottom-20 -left-20 z-20 w-32 sm:-bottom-24 sm:-left-20 sm:w-40"
+          className="absolute -bottom-12 -left-8 z-20 w-20 sm:-bottom-24 sm:-left-20 sm:w-40"
         >
           <Image
             src="/images/glue.svg"
@@ -131,7 +131,7 @@ function About() {
           />
         </div>
 
-        <article className="-rotate-1 rounded-lg bg-light/90 px-6 py-10 shadow sm:px-10 sm:py-14 lg:px-16 lg:py-16">
+        <article className="-rotate-1 rounded-lg bg-light/90 px-5 py-8 shadow sm:px-10 sm:py-14 lg:px-16 lg:py-16">
           <div className="mx-auto">
             {/* Card heading */}
             <h3 className="flex items-center gap-2 text-2xl font-extrabold sm:text-3xl">
