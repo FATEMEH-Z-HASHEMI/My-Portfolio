@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
 import Button from "@/components/Button";
@@ -16,6 +16,11 @@ const navigationItems = [
 
 function Navbar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const isMounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
 
   useEffect(() => {
     document.body.style.overflow = isSidebarOpen ? "hidden" : "";
@@ -94,7 +99,7 @@ function Navbar() {
       </nav>
 
       {/* Mobile Sidebar + Overlay */}
-      {typeof document !== "undefined" &&
+      {isMounted &&
         createPortal(
           <>
             {/* Overlay */}
