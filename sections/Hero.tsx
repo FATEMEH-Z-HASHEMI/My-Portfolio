@@ -87,7 +87,7 @@ function Hero() {
               width={1600}
               height={500}
               priority
-              className="h-auto w-[150vw] max-w-none shrink-0 sm:w-screen"
+              className="h-auto w-[210vw] md:w-[170vw] lg:w-[150vw] max-w-none shrink-0"
             />
 
             <Image
@@ -97,7 +97,7 @@ function Hero() {
               width={1600}
               height={500}
               priority
-              className="h-auto w-[150vw] max-w-none shrink-0 sm:w-screen"
+              className="h-auto w-[210vw] md:w-[170vw] lg:w-[150vw] max-w-none shrink-0 ml-10"
             />
           </div>
         </div>
@@ -126,9 +126,10 @@ function Hero() {
             bottom-[2%]
             right-[4%]
             z-30
-            flex
+            md:flex
+            hidden
             flex-col
-            items-center
+            items-center 
           "
         >
           <div className="flex flex-col items-center justify-center gap-3 sm:gap-4">
