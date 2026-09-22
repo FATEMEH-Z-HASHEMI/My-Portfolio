@@ -1,13 +1,13 @@
 "use client";
 
 import * as React from "react";
-import { useRef, useState } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useMotionValue,
-  useSpring,
-} from "framer-motion";
+import { useRef, useState, useSyncExternalStore } from "react";
+import { createPortal } from "react-dom";
+import { motion, useMotionValue, useSpring } from "framer-motion";
+
+const PREVIEW_WIDTH = 192;
+const PREVIEW_HEIGHT = 112;
+const OFFSET_Y = 40;
 
 interface HoverLinkPreviewProps {
   href: string;
@@ -23,6 +23,11 @@ const HoverLinkPreview: React.FC<HoverLinkPreviewProps> = ({
   children,
 }) => {
   const [showPreview, setShowPreview] = useState(false);
+  const isMounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
   const prevX = useRef<number | null>(null);
 
   const motionTop = useMotionValue(0);
@@ -44,9 +49,27 @@ const HoverLinkPreview: React.FC<HoverLinkPreviewProps> = ({
     damping: 20,
   });
 
-  const handleMouseEnter = () => {
+  const updatePosition = (clientX: number, clientY: number) => {
+    const top = clientY - PREVIEW_HEIGHT - OFFSET_Y;
+
+    motionTop.set(
+      Math.max(12, Math.min(top, window.innerHeight - PREVIEW_HEIGHT - 12)),
+    );
+    motionLeft.set(
+      Math.max(
+        12,
+        Math.min(
+          clientX - PREVIEW_WIDTH / 2,
+          window.innerWidth - PREVIEW_WIDTH - 12,
+        ),
+      ),
+    );
+  };
+
+  const handleMouseEnter = (e: React.MouseEvent<HTMLAnchorElement>) => {
     setShowPreview(true);
     prevX.current = null;
+    updatePosition(e.clientX, e.clientY);
   };
 
   const handleMouseLeave = () => {
@@ -56,12 +79,7 @@ const HoverLinkPreview: React.FC<HoverLinkPreviewProps> = ({
   };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    const PREVIEW_WIDTH = 192;
-    const PREVIEW_HEIGHT = 112;
-    const OFFSET_Y = 40;
-
-    motionTop.set(e.clientY - PREVIEW_HEIGHT - OFFSET_Y);
-    motionLeft.set(e.clientX - PREVIEW_WIDTH / 2);
+    updatePosition(e.clientX, e.clientY);
 
     if (prevX.current !== null) {
       const deltaX = e.clientX - prevX.current;
@@ -88,41 +106,27 @@ const HoverLinkPreview: React.FC<HoverLinkPreviewProps> = ({
         {children}
       </a>
 
-      <AnimatePresence>
-        {showPreview && (
-          <motion.div
-            initial={{
-              opacity: 0,
-              scale: 0.8,
-              y: -10,
-              rotate: 0,
-            }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-              y: 0,
-            }}
-            exit={{
-              opacity: 0,
-              scale: 0.8,
-              y: -10,
-              rotate: 0,
-            }}
-            transition={{
-              duration: 0.2,
-              ease: "easeOut",
-            }}
-            style={{
-              position: "fixed",
-              top: springTop,
-              left: springLeft,
-              rotate: springRotate,
-              zIndex: 50,
-              pointerEvents: "none",
-            }}
-          >
-            <div
-              className="
+      {isMounted
+        ? createPortal(
+            <motion.div
+              initial={false}
+              animate={{
+                opacity: showPreview ? 1 : 0,
+                scale: showPreview ? 1 : 0.8,
+                y: showPreview ? 0 : -10,
+              }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              style={{
+                position: "fixed",
+                top: springTop,
+                left: springLeft,
+                rotate: springRotate,
+                zIndex: 100,
+                pointerEvents: "none",
+              }}
+            >
+              <div
+                className="
                 rounded-2xl
                 border border-black/10
                 bg-white/80
@@ -130,22 +134,23 @@ const HoverLinkPreview: React.FC<HoverLinkPreviewProps> = ({
                 shadow-xl
                 backdrop-blur-md
               "
-            >
-              <img
-                src={previewImage}
-                alt={imageAlt}
-                draggable={false}
-                className="
+              >
+                <img
+                  src={previewImage}
+                  alt={imageAlt}
+                  draggable={false}
+                  className="
                   h-28
                   w-48
                   rounded-xl
                   object-contain
                 "
-              />
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                />
+              </div>
+            </motion.div>,
+            document.body,
+          )
+        : null}
     </>
   );
 };

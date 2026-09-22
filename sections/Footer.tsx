@@ -200,7 +200,7 @@ function Footer() {
             alt="me"
             width={320}
             height={320}
-            className="h-auto w-40 hidden lg:w-[320px]"
+            className="h-auto w-40 hidden lg:block lg:w-[320px]"
           />
         </div>
       </footer>

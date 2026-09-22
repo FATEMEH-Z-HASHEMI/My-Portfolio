@@ -87,7 +87,7 @@ function Hero() {
               width={1600}
               height={500}
               priority
-              className="h-auto w-[210vw] md:w-[170vw] lg:w-[150vw] max-w-none shrink-0"
+              className="h-auto w-[210vw] md:w-[170vw] lg:w-[90vw] max-w-none shrink-0"
             />
 
             <Image
@@ -97,7 +97,7 @@ function Hero() {
               width={1600}
               height={500}
               priority
-              className="h-auto w-[210vw] md:w-[170vw] lg:w-[150vw] max-w-none shrink-0 ml-10"
+              className="h-auto w-[210vw] md:w-[170vw] lg:w-[90vw] max-w-none shrink-0 ml-10"
             />
           </div>
         </div>
@@ -112,7 +112,7 @@ function Hero() {
                 width={800}
                 height={1000}
                 priority
-                className="w-full md:w-[90%] lg:w-full m-auto"
+                className="w-full md:w-[90%] lg:w-[88%] m-auto"
               />
             </div>
           </div>

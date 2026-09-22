@@ -194,7 +194,7 @@ function Project() {
             <div
               key={project.title}
               data-project-card
-              className="group relative mx-auto grid w-full items-center justify-center gap-5 border-b border-text/15 pb-8 pt-7 last:border-b-0 sm:w-[92%] lg:grid-cols-[220px_100px_1fr] lg:pb-12 bg-light/50 lg:bg-none rounded-xl lg:rounded-none px-10 lg:px-0 my-10"
+              className="group relative mx-auto grid w-full items-center justify-center gap-5 pb-8 pt-7 sm:w-[92%] lg:grid-cols-[220px_100px_1fr] lg:pb-12 bg-light/50 lg:bg-light/0 rounded-xl lg:rounded-none px-10 lg:px-0 my-10"
             >
               <div className="flex justify-center items-center">
                 <div className="text-xl font-black tracking-[-0.05em] sm:text-2xl lg:pl-0">
@@ -204,7 +204,7 @@ function Project() {
 
               <div className="hidden h-full w-0.5 bg-text/40 lg:block" />
 
-              <div className="relative lg:pl-10 text-center md:text-right">
+              <div className="relative lg:pl-10 text-center md:text-left">
                 <h3 className="text-xl font-black tracking-tight sm:text-2xl">
                   <MagneticText text={project.title} hoverClassName="bg-text" />
                 </h3>
