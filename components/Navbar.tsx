@@ -5,6 +5,7 @@ import { createPortal } from "react-dom";
 import Image from "next/image";
 import Button from "@/components/Button";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
 const navigationItems = [
   { label: "About me", href: "#about" },
@@ -146,9 +147,96 @@ function Navbar() {
                 ))}
               </ul>
 
-              {/* Button */}
-              <div className="mt-auto border-t border-text/10 pt-6">
-                <Button />
+              <div className="mt-auto">
+                <div className="flex flex-col justify-center items-center">
+                  <Image
+                    src="/icons/logo.svg"
+                    alt="logo site"
+                    width={64}
+                    height={64}
+                    className="h-12 w-12 shrink-0 sm:h-22 sm:w-22"
+                  />
+                  <p>+98 911-775-5994</p>
+                </div>
+                <div>
+                  <div className="mt-2 flex flex-row items-center justify-center">
+                    {/* Telegram */}
+                    <Link
+                      href="https://t.me/FTM_HASHEMI7"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Telegram"
+                      className="group relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-full"
+                    >
+                      <span className="absolute inset-0 translate-y-full rounded-full bg-[#229ED9] transition-transform duration-500 ease-out group-hover:translate-y-0" />
+
+                      <Image
+                        src="/icons/Telegram App.svg"
+                        alt="Telegram"
+                        width={20}
+                        height={20}
+                        className="relative z-10 transition-transform duration-500 ease-out group-hover:rotate-[360deg]"
+                      />
+                    </Link>
+
+                    {/* GitHub */}
+                    <Link
+                      href="https://github.com/FATEMEH-Z-HASHEMI"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="GitHub"
+                      className="group relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-full"
+                    >
+                      <span className="absolute inset-0 translate-y-full rounded-full bg-[#3D3D3D] transition-transform duration-500 ease-out group-hover:translate-y-0" />
+
+                      <Image
+                        src="/icons/Github.svg"
+                        alt="GitHub"
+                        width={20}
+                        height={20}
+                        className="relative z-10 transition-transform duration-500 ease-out group-hover:rotate-[360deg]"
+                      />
+                    </Link>
+
+                    {/* LinkedIn */}
+                    <Link
+                      href="https://www.linkedin.com/in/fatemeh-z-hashemi/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn"
+                      className="group relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-full"
+                    >
+                      <span className="absolute inset-0 translate-y-full rounded-full bg-[#0A66C2] transition-transform duration-500 ease-out group-hover:translate-y-0" />
+
+                      <Image
+                        src="/icons/LinkedIn.svg"
+                        alt="LinkedIn"
+                        width={20}
+                        height={20}
+                        className="relative z-10 transition-transform duration-500 ease-out group-hover:rotate-[360deg]"
+                      />
+                    </Link>
+
+                    {/* Instagram */}
+                    <Link
+                      href="https://www.instagram.com/ftm.z.hashemipv/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram"
+                      className="group relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-full"
+                    >
+                      <span className="absolute inset-0 translate-y-full rounded-full bg-[#E4405F] transition-transform duration-500 ease-out group-hover:translate-y-0" />
+
+                      <Image
+                        src="/icons/Instagram.svg"
+                        alt="Instagram"
+                        width={20}
+                        height={20}
+                        className="relative z-10 transition-transform duration-500 ease-out group-hover:rotate-[360deg]"
+                      />
+                    </Link>
+                  </div>
+                </div>
               </div>
             </aside>
           </>,

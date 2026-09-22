@@ -36,35 +36,35 @@ function Footer() {
         >
           <Image
             src="/images/star.svg"
-            alt=""
+            alt="star"
             width={34}
             height={34}
             className="absolute left-[11%] top-[14%] w-7 rotate-12 opacity-75"
           />
           <Image
             src="/images/sparkle.svg"
-            alt=""
+            alt="sparkles"
             width={28}
             height={28}
             className="absolute left-[43%] top-[22%] w-6 -rotate-12 opacity-60"
           />
           <Image
             src="/images/star.svg"
-            alt=""
+            alt="start"
             width={46}
             height={46}
             className="absolute right-[31%] top-[12%] w-9 -rotate-6 opacity-65"
           />
           <Image
             src="/images/sparkle.svg"
-            alt=""
+            alt="sparkles"
             width={38}
             height={38}
             className="absolute bottom-[18%] right-[72%] w-7 rotate-90 opacity-70"
           />
           <Image
             src="/images/sparkle.svg"
-            alt=""
+            alt="sparkles"
             width={38}
             height={38}
             className="absolute bottom-[2%] right-[22%] w-7 rotate-12 opacity-70"
