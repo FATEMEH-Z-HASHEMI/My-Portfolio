@@ -112,7 +112,7 @@ function Hero() {
                 width={800}
                 height={1000}
                 priority
-                className="w-full"
+                className="w-full md:w-[90%] lg:w-full m-auto"
               />
             </div>
           </div>
@@ -126,7 +126,7 @@ function Hero() {
             bottom-[2%]
             right-[4%]
             z-30
-            md:flex
+            lg:flex
             hidden
             flex-col
             items-center 

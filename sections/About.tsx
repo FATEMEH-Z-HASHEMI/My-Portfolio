@@ -104,7 +104,7 @@ function About() {
         {/* Top glue */}
         <div
           data-gsap="about-glue-top"
-          className="absolute -right-4 -top-9 z-20 w-20 sm:-right-20 sm:-top-24 sm:w-40"
+          className="absolute -right-4 -top-9 z-20 w-20 md:-right-10 md:-top-12 md:w-22 lg:-right-20 lg:-top-24 lg:w-40"
         >
           <Image
             src="/images/glue.svg"
@@ -119,7 +119,7 @@ function About() {
         {/* Bottom glue */}
         <div
           data-gsap="about-glue-bottom"
-          className="absolute -bottom-10 -left-4 z-20 w-20 sm:-bottom-24 sm:-left-20 sm:w-40"
+          className="absolute -bottom-10 -left-4 z-20 w-20 md:w-22 md:-bottom-12 md:-left-9 lg:-bottom-24 lg:-left-20 lg:w-40"
         >
           <Image
             src="/images/glue.svg"
